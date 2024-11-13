@@ -35,17 +35,19 @@ fn main() {
 
     if args.len() <= 1 {
         println!("
-        Create a directory if it does not already exist.
-        Input format: [directory name]<flags + information>
-        Flags:
-            -p | --permissions
-                Provide flag and permission set in octal
-            -P | --parents 
-                Provide a list of parent directories. If they need to have special permissions, use -pp or --parent-permissions.
-                This modifies the input format to [directory name]<flags + information> + [parent directory(s)]<parent permission flag + information>
-            -h | --help
-                Prints this text");
-        return;
+Create a directory if it does not already exist.
+Input format: [directory name]<flags + information>
+Flags:
+    -p | --permissions
+        Provide flag and permission set in octal
+    -P | --parents 
+        Provide a list of parent directories. If they need to have special permissions, 
+        use -pp or --parent-permissions.
+        This modifies the input format to [directory name]<flags + information> + 
+        [parent directory(s)]<parent permission flag + information>
+    -h | --help
+        Prints this text");
+                        return;
     } else {
         directory_name = args[1].clone();
     }    
@@ -147,7 +149,7 @@ fn main() {
 
                     } 
 
-                    if parent_names[parentitr+1] == "-PP" {parentitr = parent_names.len() + 1} else {parentitr += 1;}
+                    if parent_names[parentitr+1] == "-PP" || parent_names[parentitr+1] == "--parent-permissions" {parentitr = parent_names.len() + 1} else {parentitr += 1;}
                 }
 
                 super_path.push_str(directory_name.as_str());
@@ -162,8 +164,10 @@ Flags:
     -p | --permissions
         Provide flag and permission set in octal
     -P | --parents 
-        Provide a list of parent directories. If they need to have special permissions, use -pp or --parent-permissions.
-        This modifies the input format to [directory name]<flags + information> + [parent directory(s)]<parent permission flag + information>
+        Provide a list of parent directories. If they need to have special permissions, 
+        use -pp or --parent-permissions.
+        This modifies the input format to [directory name]<flags + information> + 
+        [parent directory(s)]<parent permission flag + information>
     -h | --help
         Prints this text");
                 return;
