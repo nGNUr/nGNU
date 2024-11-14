@@ -40,8 +40,10 @@ fn main() -> std::io::Result<()> {
         if !full_path.exists() {
             let mut file = File::create(&file_name)?;
             print!("0");
+            process::exit(0);
         } else {
             print!("1");
+            process::exit(1);
             return Ok(());
         }
     }
