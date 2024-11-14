@@ -8,7 +8,9 @@ Flags:
     -p | --permissions
         Provide flag and permission set in octal
     -P | --parents 
-        Provide a list of parent directories. If they need to have special permissions, use -pp or --parent-permissions.
-        This modifies the input format to [directory name]<flags + information> + [parent directory(s)]<parent permission flag + information>
+        Provide a list of parent directories. If they need to have special permissions, 
+        use -pp or --parent_permissions.
+        This modifies the input format to [directory name]<flags + information> + 
+        [parent directory(s)]<parent permission flag + information>
     -h | --help
         Prints this text
