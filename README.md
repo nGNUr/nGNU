@@ -1,5 +1,5 @@
 # nGNU - not GNU 
-Taking something that works perfectly well and rewritting it in Rust because we think we are special. 
+Taking something that works perfectly well and re-writing it in Rust because we think we are special. 
 
 
 # Goals
@@ -16,9 +16,9 @@ A checked box indicates that it is being/has been worked on, doesn't mean it's d
 
 
  # Why
-Why are we even doing this the old question. Well becuase it's fun.... mostly GNU is old and we still like it a lot we just want to moderize some of the core compentents. 
-Like mv, cp, touch, mkdir, etc... We also want to add some new functionality to them too, and make them colourful! This project also severs as a way to learn and better our Rust, programming, and co-op skills. 
+Why are we even doing this the old question. Well because it's fun.... mostly GNU is old and we still like it a lot we just want to modernize some of the core compentents. 
+Like mv, cp, touch, mkdir, etc... We also want to add some new functionality to them too, and make them colourful! This project also serves as a way to learn and better our Rust, programming, and co-op skills. 
 
 
 # How can I help
-What to get involved in this maddness? Amazing checkout the CONTRIBUTING.md file for details.
+Want to get involved in this madness? Amazing, checkout the CONTRIBUTING.md file for details.
