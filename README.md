@@ -21,4 +21,4 @@ Like mv, cp, touch, mkdir, etc... We also want to add some new functionality to 
 
 
 # How can I help
-We will soon be making a contributing.md file. For now create an issue and work your magic. 
+What to get involved in this maddness? Amazing checkout the CONTRIBUTING.md file for details.
