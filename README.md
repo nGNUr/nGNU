@@ -1,4 +1,4 @@
-# GNU_Rebuild
+# nGNU - not GNU 
 Taking something that works perfectly well and rewritting it in Rust because we think we are special. 
 
 
