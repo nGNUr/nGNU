@@ -23,8 +23,7 @@ fn main() -> std::io::Result<()> {
 
     // If there are no arguments, print the help message
     if args.len() <= 1 {
-        println!(
-            "
+        println!("
             Create file if it does not already exist.
             Usage: create_file [options] [file_name]
             Options:
