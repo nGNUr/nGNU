@@ -7,7 +7,7 @@ Currently the main branch is locked down meaning you can't directly add or remov
 
 However...
 
-1. Create a branch (title it the name of the binary, more on that later)
+1. Fork the repo
 2. Write code
 3. Add README.md file explained use and command line args
 4. Push code
@@ -18,10 +18,6 @@ However...
 
 
 # Notes
-
-## Branch nameing
-We don't do anything crazy in the branch namming department branchs are name by the name of the command. So if you remade the move command alais (mv) you would name your branch "mv"
-If you made a command called "todo" the branch will be called "todo"
 
 
 ## README.md file
