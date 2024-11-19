@@ -29,9 +29,9 @@ fn print_help_menu() {
 Create a directory if it does not already exist.
 Input format: [directory name]<flags + information>
 Flags:
-    -p | --permissions
+    -P | --permissions
         Provide flag and permission set in octal
-    -P | --parents 
+    -p | --parents 
         Provide a list of parent directories. If they need to have special permissions, 
         use -pp or --parent_permissions.
         This modifies the input format to [directory name]<flags + information> + 
@@ -61,7 +61,7 @@ fn main() {
     }    
     while itr < args.len() {
         match args[itr].as_str() {
-            "-p" | "--permissions" => {
+            "-P" | "--permissions" => {
                 if itr + 1 < args.len() {
 
                     let permission_arg = &args[itr + 1];
@@ -76,7 +76,7 @@ fn main() {
                     return;
                 }
             },
-            "-P" | "--parents" => {
+            "-p" | "--parents" => {
                 if itr + 1 >= args.len() {
                     eprintln!("ERR: flag given but no arguments provided!");
                     return;
@@ -113,7 +113,7 @@ fn main() {
                                     return;  
                                 }
                             }
-                            println!("Passed here")
+                            //println!("Passed here")
                         }
                     }
 
