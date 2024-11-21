@@ -8,7 +8,7 @@ use std::os::unix::fs::DirBuilderExt;
  * @path take an &str path name/name of directory
  * @permissions 
  */
-fn create_directory(path: &str, permissions: u32) {
+fn create_directory(path: &str, permissions: u32, nosilent: bool) {
 
     let mut builder = fs::DirBuilder::new();
 
@@ -16,8 +16,8 @@ fn create_directory(path: &str, permissions: u32) {
     builder.mode(permissions);
     
     match builder.create(path) {
-        Ok(()) => println!("Successfully created {:?} with permissions {:o}", path, permissions), 
-        Err(e) => println!("Error: {:?}", e)
+        Ok(()) => {if nosilent == true { println!("Successfully created {:?} with permissions {:o}", path, permissions) }}, 
+        Err(e) => { println!("Error: {:?}", e); std::process::exit(1); }
     }
 }
 
@@ -36,6 +36,8 @@ Flags:
         use -pp or --parent_permissions.
         This modifies the input format to [directory name]<flags + information> + 
         [parent directory(s)]<parent permission flag + information>
+    -ns | --no_silent
+        allow program to output completion messages
     -h | --help
         Prints this text
 ");
@@ -144,13 +146,13 @@ fn main() {
                     if parent_permissions.len() != 0 {
 
                         super_path.push_str(parent_names[parentitr].as_str());
-                        create_directory(&super_path.as_str(),parent_permissions[parentitr]);
+                        create_directory(&super_path.as_str(),parent_permissions[parentitr], false);
                         super_path.push_str("/");
 
                     } else {
 
                         super_path.push_str(parent_names[parentitr].as_str());
-                        create_directory(&super_path.as_str(), 493);
+                        create_directory(&super_path.as_str(), 493, false);
                         super_path.push_str("/");
 
                     } 
@@ -173,6 +175,6 @@ fn main() {
         itr += 1
     }
 
-    create_directory(&directory_name, permission_level);
+    create_directory(&directory_name, permission_level, false);
 
 }
